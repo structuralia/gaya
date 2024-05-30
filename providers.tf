@@ -8,7 +8,7 @@
     }
     
     provider "aws" {
-        region = "eu-west-1"
+        region = var.region
         # allowed_account_ids = ["269433206282"]
         # profile = "pharos"
     }
