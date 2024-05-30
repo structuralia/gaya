@@ -1,8 +1,10 @@
+
+
 # ------------------------------------
 # Creación vpc definida por nosotros
 # ------------------------------------
 module "AwsModuleTerraformVpc" {
-  source                    = "https://github.com/structuralia/vpc.git"
+  source                    = "./modules/AwsModuleTerraformVpc"
   project_name              = var.project_name
   env                       = var.env
   region                    = var.region
@@ -17,7 +19,7 @@ module "AwsModuleTerraformVpc" {
 # Creación security group 
 # ------------------------------------
 module "AwsModuleTerraformSg" {
-    source          = "https://github.com/structuralia/sg.git"
+    source          = "./modules/AwsModuleTerraformSg"
     project_name    = var.project_name
     env             = var.env
     vpc_id          = module.AwsModuleTerraformVpc.vpc_id
